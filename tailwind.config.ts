@@ -10,28 +10,30 @@ const config: Config = {
     extend: {
       colors: {
         background: {
-          primary: "#080B14",
-          secondary: "#0E1220",
-          card: "#131929",
+          primary: "#06070D",
+          secondary: "#0A0D18",
+          card: "#0E1120",
         },
         border: {
-          DEFAULT: "rgba(255,255,255,0.08)",
+          DEFAULT: "rgba(255,255,255,0.07)",
           light: "rgba(255,255,255,0.12)",
         },
         accent: {
           violet: "#7C3AED",
           purple: "#A855F7",
+          light: "#A78BFA",
           gold: "#D4A853",
         },
         text: {
-          primary: "#F0F0F8",
-          secondary: "#9CA3AF",
-          muted: "#6B7280",
+          primary: "#F2F1F8",
+          secondary: "#9CA0B3",
+          muted: "#5F6577",
         },
       },
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        display: ['"Bricolage Grotesque"', "sans-serif"],
+        body: ["Figtree", "sans-serif"],
+        serif: ['"Instrument Serif"', "serif"],
       },
       keyframes: {
         fadeInUp: {
@@ -40,7 +42,7 @@ const config: Config = {
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-12px)" },
+          "50%": { transform: "translateY(-14px)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
@@ -58,14 +60,20 @@ const config: Config = {
           from: { transform: "translateX(-50%)" },
           to: { transform: "translateX(0)" },
         },
+        "aurora-drift": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(40px, -30px) scale(1.08)" },
+          "66%": { transform: "translate(-30px, 20px) scale(0.96)" },
+        },
       },
       animation: {
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
-        float: "float 6s ease-in-out infinite",
+        float: "float 7s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "scroll-left": "scroll-left 30s linear infinite",
-        "scroll-right": "scroll-right 30s linear infinite",
+        "scroll-left": "scroll-left 32s linear infinite",
+        "scroll-right": "scroll-right 32s linear infinite",
+        aurora: "aurora-drift 14s ease-in-out infinite",
       },
     },
   },

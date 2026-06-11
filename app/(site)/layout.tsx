@@ -1,3 +1,5 @@
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function SiteLayout({
@@ -7,7 +9,9 @@ export default function SiteLayout({
 }) {
   return (
     <>
+      <Navbar />
       {children}
+      <Footer />
       <ScrollToTop />
     </>
   );

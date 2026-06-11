@@ -1,92 +1,150 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
+
+const stats = [
+  { value: "50+", label: "Projects Delivered" },
+  { value: "4", label: "Service Verticals" },
+  { value: "24/7", label: "AI Systems Live" },
+];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden pt-28 pb-20">
       {/* Background layers */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)",
+            backgroundSize: "36px 36px",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%)",
+            maskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%)",
+          }}
+        />
+        {/* Aurora */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 40%, rgba(124,58,237,0.15) 0%, transparent 70%)",
+              "radial-gradient(ellipse at 50% 35%, rgba(124,58,237,0.16) 0%, transparent 65%)",
           }}
         />
-        <div className="absolute top-20 left-1/4 w-[600px] h-[600px] rounded-full bg-[#7C3AED]/10 blur-3xl animate-float" />
+        <div className="absolute top-24 left-[18%] w-[520px] h-[520px] rounded-full bg-[#7C3AED]/[0.12] blur-3xl animate-aurora" />
         <div
-          className="absolute bottom-20 right-1/4 w-[400px] h-[400px] rounded-full bg-[#A855F7]/10 blur-3xl"
-          style={{ animation: "float 8s ease-in-out infinite reverse" }}
+          className="absolute bottom-16 right-[15%] w-[420px] h-[420px] rounded-full bg-[#A855F7]/[0.09] blur-3xl"
+          style={{ animation: "aurora-drift 18s ease-in-out infinite reverse" }}
         />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-[#D4A853]/[0.03] blur-3xl" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <motion.span
-          initial={{ opacity: 0, y: 32 }}
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0 }}
-          className="inline-block border border-[#7C3AED]/50 bg-[#7C3AED]/10 text-[#A855F7] text-sm px-4 py-1.5 rounded-full mb-8"
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="inline-flex items-center gap-2.5 glass rounded-full px-4 py-2 mb-9"
         >
-          ✦ AI-Powered Digital Agency
-        </motion.span>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A855F7] opacity-60" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A855F7]" />
+          </span>
+          <span className="text-xs tracking-[0.22em] uppercase text-[#C4B5FD] font-medium">
+            AI-Powered Digital Agency
+          </span>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="font-display font-bold tracking-tight leading-tight"
-          style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="font-display font-extrabold tracking-tight text-[#F2F1F8]"
+          style={{ fontSize: "clamp(2.7rem, 6.5vw, 5.25rem)", lineHeight: 1.04 }}
         >
-          AI-Powered Digital Solutions That
+          Digital solutions built to
           <br />
-          <span className="gradient-text">Drive Business Growth</span>
+          <span className="serif-accent gradient-text pr-2">
+            drive real growth
+          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-[#9CA3AF] text-lg max-w-2xl mx-auto mt-6"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-[#9CA0B3] text-lg md:text-xl max-w-2xl mx-auto mt-7 leading-relaxed"
         >
-          Websites, AI automation, SEO, and digital marketing designed to
-          generate more leads and revenue.
+          Websites, AI automation, SEO, and digital marketing — engineered as
+          one system that turns attention into revenue.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-11"
         >
           <a
             href="#contact"
-            className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white px-8 py-3.5 rounded-xl font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25"
+            className="group relative overflow-hidden bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-[1.03] hover:shadow-xl hover:shadow-violet-500/30 inline-flex items-center gap-2"
           >
-            Book Discovery Call →
+            <span className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+            Book Discovery Call
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
           <a
-            href="#solutions"
-            className="border border-white/20 text-white hover:bg-white/5 px-8 py-3.5 rounded-xl font-medium transition-all"
+            href="#portfolio"
+            className="glass text-[#F2F1F8] px-8 py-4 rounded-full font-medium transition-all hover:border-[#7C3AED]/50 hover:bg-white/[0.04]"
           >
-            View Portfolio
+            View Our Work
           </a>
         </motion.div>
 
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex items-center justify-center gap-6 mt-10 text-sm text-[#9CA3AF]"
+          transition={{ duration: 0.8, delay: 0.75 }}
+          className="grid grid-cols-3 max-w-2xl mx-auto mt-20"
         >
-          <span>50+ Projects Delivered</span>
-          <span className="text-[rgba(255,255,255,0.2)]">|</span>
-          <span>5+ Technologies</span>
-          <span className="text-[rgba(255,255,255,0.2)]">|</span>
-          <span>100% Satisfaction Focus</span>
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`px-4 md:px-8 ${
+                i === 1 ? "border-x border-white/[0.07]" : ""
+              }`}
+            >
+              <p className="font-display font-bold text-3xl md:text-4xl text-[#F2F1F8]">
+                {stat.value.replace("+", "")}
+                {stat.value.includes("+") && (
+                  <span className="text-[#A855F7]">+</span>
+                )}
+              </p>
+              <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-[#5F6577] mt-2 font-medium">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </div>
+
+      {/* Scroll cue */}
+      <motion.a
+        href="#services"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.3 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-[#5F6577] hover:text-[#A78BFA] hover:border-[#7C3AED]/50 transition-colors"
+        aria-label="Scroll to services"
+      >
+        <ArrowDown className="w-4 h-4 animate-bounce" />
+      </motion.a>
     </section>
   );
 }
